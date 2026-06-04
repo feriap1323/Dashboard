@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — MyApp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f; --surface: #13131a; --border: #2a2a3a;
+      --accent: #e8ff47; --accent2: #7b61ff; --text: #f0f0f8; --muted: #8888aa;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.4rem 3rem; border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,10,15,0.85); backdrop-filter: blur(12px);
+    }
+    .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.04em; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 0.5rem; }
+    .nav-links a {
+      font-size: 0.9rem; font-weight: 500; color: var(--muted);
+      text-decoration: none; padding: 0.45rem 1rem; border-radius: 100px; transition: all 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); background: var(--surface); }
+    .nav-links a.active { color: var(--accent); }
+
+    .page { max-width: 760px; margin: 0 auto; padding: 5rem 3rem; }
+    .tag {
+      display: inline-block; font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2);
+      border: 1px solid rgba(123,97,255,0.3); padding: 0.3rem 0.9rem;
+      border-radius: 100px; margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: 'Syne', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 1.5rem;
+    }
+    .lead { font-size: 1.15rem; color: var(--muted); line-height: 1.75; margin-bottom: 3rem; }
+
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 3rem; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: var(--accent2); }
+    .card-icon { font-size: 1.6rem; margin-bottom: 0.7rem; }
+    .card-title { font-family: 'Syne', sans-serif; font-weight: 700; margin-bottom: 0.4rem; }
+    .card-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+    footer {
+      text-align: center; padding: 2rem; color: var(--muted);
+      font-size: 0.82rem; border-top: 1px solid var(--border); margin-top: 4rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+    <nav>
+      <a href="/home" class="logo">NodeFlow</a>
+      <ul class="nav-links">
+        <li><a href="/home" class="active">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/api-tester">API Tester</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register" class="nav-cta">Register</a></li>
+      </ul>
+    </nav>
+
+
+<div class="page">
+  <div class="tag">About the Project</div>
+  <h1>Built with Node.js,<br>made to last.</h1>
+  <p class="lead">
+    This project demonstrates a full-stack web application using Node.js and Express
+    on the backend, MongoDB for data storage, and clean HTML pages on the frontend —
+    all communicating through a RESTful API.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">Express Backend</div>
+      <div class="card-desc">Lightweight REST API with proper error handling, CORS support, and JSON responses.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗄️</div>
+      <div class="card-title">MongoDB / Mongoose</div>
+      <div class="card-desc">Schema-based data modeling with Mongoose for clean, validated database operations.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <div class="card-title">HTML Frontend</div>
+      <div class="card-desc">Vanilla HTML pages with API integration — no framework overhead, just clean code.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔒</div>
+      <div class="card-title">User Management</div>
+      <div class="card-desc">Signup and user listing endpoints, ready to extend with authentication.</div>
+    </div>
+  </div>
+</div>
+
+<footer>MyApp &mdash; <a href="home.html">Home</a> · <a href="gallery.html">Gallery</a></footer>
+</body>
+</html>
